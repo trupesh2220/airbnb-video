@@ -24,7 +24,7 @@ export default function RootLayout({
       <head />
       <body className={font.className}>
         <ClientOnly>
-          <Model isOpen></Model>
+          <Model onClose={()=>{}} onSubmit={()=>{}} actionLabel={'fdf'} isOpen></Model>
           <Navbar />
         </ClientOnly>
           {children}
