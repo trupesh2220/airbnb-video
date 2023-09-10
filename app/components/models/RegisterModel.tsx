@@ -7,6 +7,8 @@ import { Field, FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import useRegisterModel from "@/app/hooks/useRegisterModel";
 import { useCallback, useState } from "react";
 import Model from "./Models";
+import Heading from "../Heading";
+import Input from "../Inputs/Input";
 
 const RegisterModel = () => {
   const registerModel = useRegisterModel();
@@ -36,6 +38,13 @@ const RegisterModel = () => {
         setIsLoading(false);
       });
   };
+
+  const bodyContent =(
+    <div className="flex flex-col gap-4">
+      <Heading title="Welcome to Airbnb" subtitle="Crate An Account" center/>
+      <Input></Input>
+    </div>
+  )
   return (
     <Model
       disabled={isLoading}
@@ -44,6 +53,7 @@ const RegisterModel = () => {
       actionLabel="Continue"
       onClose={registerModel.onClose}
       onSubmit={handleSubmit(onSubmit)}
+      body={bodyContent}
     />
   );
 };
